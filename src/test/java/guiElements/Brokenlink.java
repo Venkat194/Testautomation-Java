@@ -15,7 +15,7 @@ public class Brokenlink extends BaseTest {
 	@Test
 	public void brokenlinks() throws IOException
 	{
-		List<WebElement> links =driver.findElements(By.xpath("(//div[@style=\"float:left;\"])[1]/ul/li/a"));
+		List<WebElement> links =driver.findElements(By.tagName("a"));
 		for (WebElement link : links) {
 			String hrefattribute= link.getAttribute("href");
 			URL url = new URL(hrefattribute);

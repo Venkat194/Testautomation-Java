@@ -25,13 +25,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 public class GUIElements extends BaseTest {
 	
+	@Parameters("name")
 	@Test(groups = {"sanity"})
-	public void GUIinput() throws InterruptedException 
+	public void GUIinput(String username) throws InterruptedException 
 	{
-		driver.findElement(By.id("name")).sendKeys("Venkat");
+		driver.findElement(By.id("name")).sendKeys(username);
 		driver.findElement(By.id("email")).sendKeys("Venkat@gmail.com");
 		driver.findElement(By.id("phone")).sendKeys("9876543210");
 		driver.findElement(By.xpath("//label[text()='Address:']/following::textarea")).sendKeys("5-102,BBSR");
@@ -39,7 +39,7 @@ public class GUIElements extends BaseTest {
 	}
 
 	@Test
-	public void radiobuttons() throws InterruptedException {
+	public void radiobuttons() throws InterruptedException{
 		WebElement female = driver.findElement(By.id("female"));
 		System.out.println("Radiobutton1" + female);
 		Actions action=new Actions(driver);
@@ -95,7 +95,7 @@ public class GUIElements extends BaseTest {
 	}
 
 	@Test
-	public void datepicke2() throws InterruptedException {
+	public void datepicker2() throws InterruptedException {
 		driver.findElement(By.id("txtDate")).click();
 		WebElement Month = driver.findElement(By.xpath("//select[@data-handler=\"selectMonth\"]"));
 		WebElement Year = driver.findElement(By.xpath("//select[@data-handler=\"selectYear\"]"));
@@ -119,7 +119,7 @@ public class GUIElements extends BaseTest {
 		System.out.println("Selected dates range----  " + result.getText());
 		String exptxt = "You selected a range of 9065 days.";
 		String acttxt = result.getText();
-		Assert.assertEquals(exptxt, acttxt);
+		Assert.assertEquals(exptxt, acttxt,"correct");
 	}
 
 	@Test
@@ -143,7 +143,7 @@ public class GUIElements extends BaseTest {
 	}
 
 	@Test
-	public void statiswebtable() {
+	public void staticwebtable() {
 		// getting the number of rows in the table
 		List<WebElement> Rows = driver.findElements(By.xpath("//table[@name=\"BookTable\"]/tbody/tr"));
 		System.out.println("Number of rows present in the static webtable-----  " + Rows.size());
@@ -165,7 +165,7 @@ public class GUIElements extends BaseTest {
 		{
 			WebElement page =driver.findElement(By.xpath("//a[text()='" + i + "']"));
 			page.click();
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			List<WebElement> checkbox= driver.findElements(By.xpath("//table[@id=\"productTable\"]/tbody/tr/td[4]/input"));
 			for (WebElement check : checkbox) {
 				check.click();
@@ -357,7 +357,8 @@ public class GUIElements extends BaseTest {
 		action.dragAndDropBy(start, 70, 0).perform();
 		Thread.sleep(3000);
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(screenshot, new File("C:\\Users\\Venkatesh Yedla\\Desktop\\venkatesh\\screenshot1.png"));       
+        File destfile = new File("C:\\\\Users\\\\Venkatesh Yedla\\\\Desktop\\\\venkatesh\\\\screenshot2.png");
+        FileUtils.copyFile(screenshot,destfile);       
 	}
 
 	
@@ -365,17 +366,17 @@ public class GUIElements extends BaseTest {
 	@Test
 	public void brokenlinks() throws IOException
 	{
-		List<WebElement> brokenlinks= driver.findElements(By.xpath("//div[@id='broken-links']/a"));
+		List<WebElement> brokenlinks= driver.findElements(By.tagName("a"));
 		System.out.println(brokenlinks.size());
-		WebElement linkheading = driver.findElement(By.xpath("//h2[text()=\"Visitors\"]"));
+		/*WebElement linkheading = driver.findElement(By.xpath("//h2[text()=\"Visitors\"]"));
 		Actions actions = new Actions(driver);
-		actions.moveToElement(linkheading).build().perform();		
+		actions.moveToElement(linkheading).build().perform();	*/	
 		for (WebElement brokenlink : brokenlinks) {
 			String linkurl= brokenlink.getAttribute("href");
 			URL url= new URL(linkurl);
 			URLConnection urlconnection = url.openConnection();
 			HttpURLConnection httpURLConnection= (HttpURLConnection) urlconnection;
-			httpURLConnection.setConnectTimeout(2000);
+			//httpURLConnection.setConnectTimeout(2000);
 			httpURLConnection.connect();
 			
 			if(httpURLConnection.getResponseCode()!=200)
@@ -387,7 +388,7 @@ public class GUIElements extends BaseTest {
 		
 	}
 
-	@Test(enabled = false)
+	@Test()
 	public void checkboxes1() {
 		
 		List<WebElement> chks= driver.findElements(By.xpath("//table[@id='countries']/tbody/tr/td/input"));
@@ -396,5 +397,6 @@ public class GUIElements extends BaseTest {
 			chk.click();
 		}
 	}
+	
 	
 }

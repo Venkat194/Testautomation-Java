@@ -2,20 +2,20 @@
 <testng-results ignored="27" total="28" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-13T16:57:04 IST" name="Default suite" finished-at="2025-06-13T16:57:24 IST" duration-ms="19171">
+  <suite started-at="2025-10-03T21:02:31 IST" name="Default suite" finished-at="2025-10-03T21:02:51 IST" duration-ms="20533">
     <groups>
     </groups>
-    <test started-at="2025-06-13T16:57:04 IST" name="Default test" finished-at="2025-06-13T16:57:24 IST" duration-ms="19171">
+    <test started-at="2025-10-03T21:02:31 IST" name="Default test" finished-at="2025-10-03T21:02:51 IST" duration-ms="20533">
       <class name="guiElements.GUIElements">
-        <test-method is-config="true" signature="setup()[pri:0, instance:guiElements.GUIElements@57250572]" started-at="2025-06-13T16:57:04 IST" name="setup" finished-at="2025-06-13T16:57:12 IST" duration-ms="7952" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:guiElements.GUIElements@740773a3]" started-at="2025-10-03T21:02:31 IST" name="setup" finished-at="2025-10-03T21:02:41 IST" duration-ms="10068" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="pagination()[pri:0, instance:guiElements.GUIElements@57250572]" started-at="2025-06-13T16:57:12 IST" name="pagination" finished-at="2025-06-13T16:57:23 IST" duration-ms="10773" status="PASS">
+        <test-method signature="checkboxes1()[pri:0, instance:guiElements.GUIElements@740773a3]" started-at="2025-10-03T21:02:41 IST" name="checkboxes1" finished-at="2025-10-03T21:02:51 IST" duration-ms="10029" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pagination -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:guiElements.GUIElements@57250572]" started-at="2025-06-13T16:57:23 IST" name="teardown" finished-at="2025-06-13T16:57:24 IST" duration-ms="377" status="PASS">
+        </test-method> <!-- checkboxes1 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:guiElements.GUIElements@740773a3]" started-at="2025-10-03T21:02:51 IST" name="teardown" finished-at="2025-10-03T21:02:51 IST" duration-ms="387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

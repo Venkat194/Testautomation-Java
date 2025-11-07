@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="hdfc.Login">
+      <class name="guiElements.GUIElements">
         <methods>
-          <include name="accountsummary"/>
-          <include name="avlbalance"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="homepage"/>
-          <include name="login"/>
+          <include name="checkboxes1"/>
         </methods>
-      </class> <!-- hdfc.Login -->
+      </class> <!-- guiElements.GUIElements -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
