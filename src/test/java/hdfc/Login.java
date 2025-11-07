@@ -18,11 +18,11 @@ public class Login extends BaseTesthdfc {
 		driver.switchTo().frame(0);
 		Thread.sleep(3000);
 		WebElement s2= driver.findElement(By.xpath("//input[@class=\"form-control text-muted\"]"));
-		s2.sendKeys("183426094");
+		s2.sendKeys("");
 		s2.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 		WebElement s3= driver.findElement(By.xpath("//input[@id=\"fldPasswordDispId\"]"));
-		s3.sendKeys("Venky@195");
+		s3.sendKeys("");
 		s3.sendKeys(Keys.ENTER);
 	}
 
